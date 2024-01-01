@@ -1,6 +1,12 @@
 class ARButton {
 
-	static createButton( renderer, sessionInit = {} ) {
+	static createButton( renderer, sessionInit = null ) {
+		if (!sessionInit) {
+			sessionInit = {
+				requiredFeatures: ["local-floor"],
+				optionalFeatures: ['bounded-floor'],
+			};
+		}
 
 		const button = document.createElement( 'button' );
 
@@ -50,7 +56,7 @@ class ARButton {
 
 				session.addEventListener( 'end', onSessionEnded );
 
-				//renderer.xr.setReferenceSpaceType( 'local' );
+				renderer.xr.setReferenceSpaceType('local-floor');
 
 				await renderer.xr.setSession( session );
 
