@@ -9,7 +9,8 @@ import {
 	TriangleStripDrawMode,
 	TrianglesDrawMode,
 	Vector3,
-} from 'three';
+//} from 'three';
+} from "https://code4fukui.github.io/three.js/build/three.module.js";
 
 function computeTangents() {
 
